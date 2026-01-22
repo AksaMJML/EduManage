@@ -1,7 +1,13 @@
 package edu.icet.model.dto;
 
 import edu.icet.util.Gender;
+import lombok.*;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class StudentDTO {
 
     private String id;
