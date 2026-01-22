@@ -7,7 +7,7 @@ import java.util.List;
 public interface SchoolService {
     void registerSchool(SchoolDTO schoolDTO);
     void updateSchool(SchoolDTO schoolDTO);
-    void deleteById(Integer id);
-    SchoolDTO searchById(Integer id);
+    void deleteById(String id);
+    SchoolDTO searchById(String id);
     List<SchoolDTO> getAllSchools();
 }
