@@ -3,8 +3,7 @@ package edu.icet.model.dto;
 import edu.icet.util.Gender;
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
