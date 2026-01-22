@@ -16,8 +16,8 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public void registerSchool(SchoolDTO schoolDTO) {
-        SchoolDTO entity = mapper.map(schoolDTO, SchoolEntity.class);
-        service.registerSchool(entity);
+        service.registerSchool(mapper.map(schoolDTO, SchoolEntity.class));
+
     }
 
     @Override
