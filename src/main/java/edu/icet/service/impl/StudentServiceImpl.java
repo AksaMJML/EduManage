@@ -16,9 +16,11 @@ public class StudentServiceImpl implements StudentService {
 
     final StudentRepositery studentRepositery;
 
+    final ModelMapper mapper;
+
     @Override
     public void addStudent(StudentDTO studentDTO) {
-        StudentEntity stdEntity = new ModelMapper().map(studentDTO, StudentEntity.class);
+        StudentEntity stdEntity = mapper.map(studentDTO, StudentEntity.class);
         studentRepositery.save(stdEntity);
     }
 
