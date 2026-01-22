@@ -1,15 +1,25 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.StudentDTO;
+import edu.icet.model.entity.StudentEntity;
+import edu.icet.repositery.StudentRepositery;
 import edu.icet.service.StudentService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
+@Service
 public class StudentServiceImpl implements StudentService {
+
+    final StudentRepositery studentRepositery;
 
     @Override
     public void addStudent(StudentDTO studentDTO) {
-
+        StudentEntity stdEntity = new ModelMapper().map(studentDTO, StudentEntity.class);
+        studentRepositery.save(stdEntity);
     }
 
     @Override
