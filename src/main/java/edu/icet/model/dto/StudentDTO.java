@@ -10,7 +10,7 @@ import lombok.*;
 @ToString
 public class StudentDTO {
 
-    private String id;
+    private Integer id;
     private String name;
     private int age;
     private String address;
