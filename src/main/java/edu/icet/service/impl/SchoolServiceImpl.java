@@ -16,7 +16,7 @@ import java.util.List;
 public class SchoolServiceImpl implements SchoolService {
 
     final SchoolRepositery repositery;
-    ModelMapper mapper;
+    final ModelMapper mapper;
 
     @Override
     public void registerSchool(SchoolDTO schoolDTO) {
