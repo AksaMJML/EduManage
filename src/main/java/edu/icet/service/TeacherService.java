@@ -4,7 +4,7 @@ import edu.icet.model.dto.TeacherDTO;
 
 import java.util.List;
 
-public interface TeacherServiceImpl {
+public interface TeacherService {
     void addTeacher(TeacherDTO teacherDTO);
     void updateTeacher(TeacherDTO teacherDTO);
     void deleteTeacher(Integer id);
