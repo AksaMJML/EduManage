@@ -7,6 +7,7 @@ import edu.icet.service.SchoolService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -33,11 +34,19 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public SchoolDTO searchById(String id) {
-
+        SchoolEntity schoolEntity = repositery.findById(id).get();
+        SchoolDTO schoolDto = mapper.map(schoolEntity, SchoolDTO.class);
+        return schoolDto;
     }
 
     @Override
     public List<SchoolDTO> getAllSchools() {
-        return List.of();
+        List<SchoolEntity> schoolEntities = repositery.findAll();
+        ArrayList<SchoolDTO> schoolDTOArrayList = new ArrayList<>();
+        schoolEntities.forEach(schoolEntity -> {
+            SchoolDTO schoolDTO = mapper.map(schoolEntity, SchoolDTO.class);
+            schoolDTOArrayList.add(schoolDTO);
+        });
+        return schoolDTOArrayList;
     }
 }
