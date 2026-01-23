@@ -6,11 +6,13 @@ import edu.icet.repositery.SchoolRepositery;
 import edu.icet.service.SchoolService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
+@Service
 public class SchoolServiceImpl implements SchoolService {
 
     final SchoolRepositery repositery;

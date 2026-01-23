@@ -13,8 +13,8 @@ import java.util.List;
 @RequestMapping("/students")
 public class StudentController {
 
-    @Autowired
-    StudentService studentService;
+    //@Autowired
+    final StudentService studentService;
 
     @PostMapping("/add")
     public void addStudent(@RequestBody StudentDTO studentDTO){
