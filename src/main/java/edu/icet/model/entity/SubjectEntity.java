@@ -12,7 +12,7 @@ import lombok.ToString;
 @Entity
 public class SubjectEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private String id;
     private String name;
 }
