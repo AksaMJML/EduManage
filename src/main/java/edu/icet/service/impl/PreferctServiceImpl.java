@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -40,6 +41,12 @@ public class PreferctServiceImpl implements PrefectService {
 
     @Override
     public List<PrefectsDTO> getAllPrefects() {
-        return List.of();
+        List<PrefectEntity> prefectEntities = repositery.findAll();
+        ArrayList<PrefectsDTO> prefectsDTOArrayList = new ArrayList<>();
+        prefectEntities.forEach(prefectEntity -> {
+            PrefectsDTO prefectsDTO = mapper.map(prefectEntity, PrefectsDTO.class);
+            prefectsDTOArrayList.add(prefectsDTO);
+        });
+        return prefectsDTOArrayList;
     }
 }
