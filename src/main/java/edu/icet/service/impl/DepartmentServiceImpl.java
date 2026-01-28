@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -40,6 +41,12 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<DepartmentDTO> getAllDepartments() {
-        return List.of();
+        List<DepartmentEntity> departmentEntities = repositery.findAll();
+        ArrayList<DepartmentDTO> departmentDTOArrayList = new ArrayList<>();
+        departmentEntities.forEach(departmentEntity -> {
+            DepartmentDTO departmentDTO = mapper.map(departmentEntity, DepartmentDTO.class);
+            departmentDTOArrayList.add(departmentDTO);
+        });
+        return departmentDTOArrayList;
     }
 }
