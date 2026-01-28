@@ -28,4 +28,9 @@ public class DepartmentController {
     public void deleteById(@PathVariable Integer id){
         service.deleteDepartment(id);
     }
+
+    @GetMapping("/search-by-id/{id}")
+    public DepartmentDTO searchById(@PathVariable Integer id){
+        return service.searchById(id);
+    }
 }

@@ -33,7 +33,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public DepartmentDTO searchById(Integer id) {
-        return null;
+        DepartmentEntity departmentEntity = repositery.findById(id).get();
+        DepartmentDTO departmentDto = mapper.map(departmentEntity, DepartmentDTO.class);
+        return departmentDto;
     }
 
     @Override
