@@ -23,4 +23,9 @@ public class DepartmentController {
     public void updateDepartment(@RequestBody DepartmentDTO departmentDTO){
         service.updateDepartment(departmentDTO);
     }
+
+    @DeleteMapping("/delete-by-id/{id}")
+    public void deleteById(@PathVariable Integer id){
+        service.deleteDepartment(id);
+    }
 }
