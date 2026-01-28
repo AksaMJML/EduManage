@@ -15,22 +15,22 @@ public class PrefectController {
     final PrefectService service;
 
     @PostMapping("/add")
-    public void addPrefect(PrefectsDTO prefectsDTO){
+    public void addPrefect(@RequestBody PrefectsDTO prefectsDTO){
         service.addPrefect(prefectsDTO);
     }
 
     @PutMapping("/update")
-    public void updatePrefect(PrefectsDTO prefectsDTO){
+    public void updatePrefect(@RequestBody PrefectsDTO prefectsDTO){
         service.updatePrefect(prefectsDTO);
     }
 
     @DeleteMapping("/delete")
-    public void deletePrefect(Integer id){
+    public void deletePrefect(@PathVariable Integer id){
         service.deletePrefect(id);
     }
 
     @GetMapping("/search-by-id/{id}")
-    public PrefectsDTO searchById(Integer id){
+    public PrefectsDTO searchById(@PathVariable Integer id){
        return service.searchById(id);
     }
 

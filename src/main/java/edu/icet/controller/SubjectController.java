@@ -15,22 +15,22 @@ public class SubjectController {
     final SubjectService service;
 
     @PostMapping("/add")
-    public void addSubject(SubjectDTO subjectDTO){
+    public void addSubject(@RequestBody SubjectDTO subjectDTO){
         service.addSubject(subjectDTO);
     }
 
     @PutMapping("/update")
-    public void updateSubject(SubjectDTO subjectDTO){
+    public void updateSubject(@RequestBody SubjectDTO subjectDTO){
         service.updateSubject(subjectDTO);
     }
 
     @DeleteMapping("/delete-by-id/{id}")
-    public void deleteSubject(String id){
+    public void deleteSubject(@PathVariable String id){
         service.deleteSubject(id);
     }
 
     @GetMapping("/search-by-id/{id}")
-    public SubjectDTO searchById(String id){
+    public SubjectDTO searchById(@PathVariable String id){
         return service.searchById(id);
     }
 

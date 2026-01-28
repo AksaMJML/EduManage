@@ -1,10 +1,7 @@
 package edu.icet.model.entity;
 
 import edu.icet.util.Gender;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
@@ -12,6 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @Entity
+@Table(name = "Student")
 public class StudentEntity {
 
     @Id

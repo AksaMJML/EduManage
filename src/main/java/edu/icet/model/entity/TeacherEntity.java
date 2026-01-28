@@ -1,16 +1,14 @@
 package edu.icet.model.entity;
 
 import edu.icet.util.Gender;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
 @Entity
+@Table(name = "Teacher")
 public class TeacherEntity {
 
     @Id
