@@ -10,6 +10,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class StreamDTO {
-    private int id;
+    private Integer id;
     private String name;
 }

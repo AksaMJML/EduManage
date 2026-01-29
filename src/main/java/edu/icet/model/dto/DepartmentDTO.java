@@ -10,6 +10,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class DepartmentDTO {
-    private int id;
+    private Integer id;
     private String name;
 }
