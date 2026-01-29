@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -41,6 +42,12 @@ public class TimeTableServiceImpl implements TimeTableService {
 
     @Override
     public List<TimeTableDTO> getAllTimeTables() {
-        return List.of();
+        List<TimeTableEntity> timeTableEntities = repositery.findAll();
+        ArrayList<TimeTableDTO> timeTableDTOArrayList = new ArrayList<>();
+        timeTableEntities.forEach(timeTableEntity -> {
+            TimeTableDTO timeTableDTO = mapper.map(timeTableEntity, TimeTableDTO.class);
+            timeTableDTOArrayList.add(timeTableDTO);
+        });
+        return timeTableDTOArrayList;
     }
 }
