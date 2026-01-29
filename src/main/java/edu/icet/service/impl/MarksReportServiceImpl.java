@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -42,6 +43,12 @@ public class MarksReportServiceImpl implements MarksReportService {
 
     @Override
     public List<MarksReportDTO> getAllMarksReports() {
-        return List.of();
+        List<MarksReportEntity> marksReportEntities = repositery.findAll();
+        ArrayList<MarksReportDTO> marksReportDTOArrayList = new ArrayList<>();
+        marksReportEntities.forEach(marksReportEntity -> {
+            MarksReportDTO marksReportDTO = mapper.map(marksReportEntity, MarksReportDTO.class);
+            marksReportDTOArrayList.add(marksReportDTO);
+        });
+        return marksReportDTOArrayList;
     }
 }

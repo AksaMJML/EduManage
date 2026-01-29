@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/marksReport")
 @RequiredArgsConstructor
@@ -33,6 +35,11 @@ public class MarksReportController {
     @GetMapping("/search/{id}")
     public MarksReportDTO searchById(@PathVariable Integer id) {
         return service.searchById(id);
+    }
+
+    @GetMapping("/getAll")
+    public List<MarksReportDTO> getAllMarksReports() {
+        return service.getAllMarksReports();
     }
 
 
