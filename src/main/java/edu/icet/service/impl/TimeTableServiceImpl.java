@@ -29,12 +29,14 @@ public class TimeTableServiceImpl implements TimeTableService {
 
     @Override
     public void deleteTimeTable(Integer id) {
-
+        repositery.deleteById(id);
     }
 
     @Override
     public TimeTableDTO searchById(Integer id) {
-        return null;
+        TimeTableEntity timeTableEntity = repositery.findById(id).get();
+        TimeTableDTO timeTableDTO = mapper.map(timeTableEntity, TimeTableDTO.class);
+        return timeTableDTO;
     }
 
     @Override
