@@ -1,0 +1,45 @@
+package edu.icet.service.impl;
+
+import edu.icet.model.dto.MarksReportDTO;
+import edu.icet.model.entity.MarksReportEntity;
+import edu.icet.repositery.MarksReportRepositery;
+import edu.icet.service.MarksReportService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.boot.Banner;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@Service
+public class MarksReportServiceImpl implements MarksReportService {
+
+    final MarksReportRepositery repositery;
+    final ModelMapper mapper;
+
+    @Override
+    public void addMarksReport(MarksReportDTO marksReportDTO) {
+        repositery.save(mapper.map(marksReportDTO , MarksReportEntity.class));
+    }
+
+    @Override
+    public void updateMarksReport(MarksReportDTO marksReportDTO) {
+
+    }
+
+    @Override
+    public void deleteMarksReport(Integer id) {
+
+    }
+
+    @Override
+    public MarksReportDTO searchById(Integer id) {
+        return null;
+    }
+
+    @Override
+    public List<MarksReportDTO> getAllMarksReports() {
+        return List.of();
+    }
+}
