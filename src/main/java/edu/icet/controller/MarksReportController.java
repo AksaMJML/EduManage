@@ -5,10 +5,7 @@ import edu.icet.service.MarksReportService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.Table;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/marksReport")
@@ -21,5 +18,10 @@ public class MarksReportController {
     @PostMapping("/add")
     public void addMarksReport(MarksReportDTO marksReportDTO) {
         service.addMarksReport(marksReportDTO);
+    }
+
+    @PutMapping("/update")
+    public void updateMarksReport(MarksReportDTO marksReportDTO) {
+        service.updateMarksReport(marksReportDTO);
     }
 }

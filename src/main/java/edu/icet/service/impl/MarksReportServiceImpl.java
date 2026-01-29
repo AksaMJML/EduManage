@@ -25,7 +25,7 @@ public class MarksReportServiceImpl implements MarksReportService {
 
     @Override
     public void updateMarksReport(MarksReportDTO marksReportDTO) {
-
+        repositery.save(mapper.map(marksReportDTO , MarksReportEntity.class));
     }
 
     @Override
