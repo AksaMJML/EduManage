@@ -30,5 +30,10 @@ public class MarksReportController {
         service.deleteMarksReport(id);
     }
 
+    @GetMapping("/search/{id}")
+    public MarksReportDTO searchById(@PathVariable Integer id) {
+        return service.searchById(id);
+    }
+
 
 }

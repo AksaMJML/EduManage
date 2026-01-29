@@ -35,7 +35,9 @@ public class MarksReportServiceImpl implements MarksReportService {
 
     @Override
     public MarksReportDTO searchById(Integer id) {
-        return null;
+        MarksReportEntity marksReportEntity = repositery.findById(id).get();
+        MarksReportDTO marksReportDTO = mapper.map(marksReportEntity, MarksReportDTO.class);
+        return marksReportDTO;
     }
 
     @Override
