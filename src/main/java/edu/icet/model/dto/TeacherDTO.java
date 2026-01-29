@@ -19,7 +19,7 @@ public class TeacherDTO {
     private int cityId;
     private Gender gender;
     private int streamId;
-    private int categoryid;
+    private int categoryId;
     private String schoolId;
     private int studentId;
     private int departmentId;
