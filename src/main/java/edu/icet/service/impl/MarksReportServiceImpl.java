@@ -30,7 +30,7 @@ public class MarksReportServiceImpl implements MarksReportService {
 
     @Override
     public void deleteMarksReport(Integer id) {
-
+        repositery.deleteById(id);
     }
 
     @Override

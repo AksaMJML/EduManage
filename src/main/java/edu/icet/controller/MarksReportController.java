@@ -16,12 +16,19 @@ public class MarksReportController {
     final MarksReportService service;
 
     @PostMapping("/add")
-    public void addMarksReport(MarksReportDTO marksReportDTO) {
+    public void addMarksReport(@RequestBody MarksReportDTO marksReportDTO) {
         service.addMarksReport(marksReportDTO);
     }
 
     @PutMapping("/update")
-    public void updateMarksReport(MarksReportDTO marksReportDTO) {
+    public void updateMarksReport(@RequestBody MarksReportDTO marksReportDTO) {
         service.updateMarksReport(marksReportDTO);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteMarksReport(@PathVariable Integer id) {
+        service.deleteMarksReport(id);
+    }
+
+
 }
