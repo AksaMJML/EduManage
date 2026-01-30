@@ -27,4 +27,10 @@ public class LabAssistantController {
     public void deleteLabAssistant(@PathVariable Integer id) {
         service.deleteLabAssistant(id);
     }
+
+    @GetMapping("/search-by-id/{id}")
+    public LabAssistantDTO searchById(@PathVariable Integer id) {
+        return service.searchById(id);
+    }
+
 }

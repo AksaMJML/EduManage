@@ -33,7 +33,9 @@ public class LabAssistantServiceImpl implements LabAssistantService {
 
     @Override
     public LabAssistantDTO searchById(Integer id) {
-        return null;
+        LabAssistantEntity labAssistantEntity = repositery.findById(id).get();
+        LabAssistantDTO labAssistantDTO = mapper.map(labAssistantEntity, LabAssistantDTO.class);
+        return labAssistantDTO;
     }
 
     @Override
