@@ -32,7 +32,7 @@ public class LabServiceImpl implements LabService {
 
     @Override
     public void deleteLab(Integer id) {
-
+        repositery.deleteById(id);
     }
 
     @Override

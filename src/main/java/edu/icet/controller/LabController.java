@@ -15,12 +15,17 @@ public class LabController {
     final LabService service;
 
     @PostMapping("/add")
-    public void addLab(LabDTO labDTO){
+    public void addLab(@RequestBody LabDTO labDTO){
         service.addLab(labDTO);
     }
 
     @PutMapping("/update")
-    public void updateLab(LabDTO labDTO) {
+    public void updateLab(@RequestBody LabDTO labDTO) {
         service.updateLab(labDTO);
+    }
+
+    @DeleteMapping("/delete-by-id/{id}")
+    public void deleteLab(@PathVariable Integer id){
+        service.deleteLab(id);
     }
 }
