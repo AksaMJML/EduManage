@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import javax.print.DocFlavor;
+import java.util.ArrayList;
 import java.util.List;
 @RequiredArgsConstructor
 @Service
@@ -40,6 +41,12 @@ public class LabAssistantServiceImpl implements LabAssistantService {
 
     @Override
     public List<LabAssistantDTO> getAll() {
-        return List.of();
+        List<LabAssistantEntity> labAssistantEntities = repositery.findAll();
+        ArrayList<LabAssistantDTO> labAssistantDTOArrayList = new ArrayList<>();
+        labAssistantEntities.forEach(labAssistantEntity -> {
+            LabAssistantDTO labAssistantDTO = mapper.map(labAssistantEntity, LabAssistantDTO.class);
+            labAssistantDTOArrayList.add(labAssistantDTO);
+        });
+        return labAssistantDTOArrayList;
     }
 }

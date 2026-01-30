@@ -1,10 +1,13 @@
 package edu.icet.controller;
 
 import edu.icet.model.dto.LabAssistantDTO;
+import edu.icet.model.dto.LabDTO;
 import edu.icet.service.LabAssistantService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/lab-assistants")
@@ -33,4 +36,8 @@ public class LabAssistantController {
         return service.searchById(id);
     }
 
+    @GetMapping("/get-all")
+    public List<LabAssistantDTO> getAllLabAssistants() {
+        return service.getAll();
+    }
 }
