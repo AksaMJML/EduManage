@@ -6,6 +6,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/labs")
 @RequiredArgsConstructor
@@ -34,4 +36,8 @@ public class LabController {
         return service.searchById(id);
     }
 
+    @GetMapping("/get-all")
+    public List<LabDTO> getAllLabs(){
+        return service.getAllLabs();
+    }
 }

@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -44,6 +45,12 @@ public class LabServiceImpl implements LabService {
 
     @Override
     public List<LabDTO> getAllLabs() {
-        return List.of();
+        List<LabEntity> labEntities = repositery.findAll();
+        ArrayList<LabDTO> labDTOArrayList = new ArrayList<>();
+        labEntities.forEach(labEntity -> {
+            LabDTO labDTO = mapper.map(labEntity, LabDTO.class);
+            labDTOArrayList.add(labDTO);
+        });
+        return  labDTOArrayList;
     }
 }
