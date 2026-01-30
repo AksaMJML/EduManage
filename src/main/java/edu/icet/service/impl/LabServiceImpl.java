@@ -27,7 +27,7 @@ public class LabServiceImpl implements LabService {
 
     @Override
     public void updateLab(LabDTO labDTO) {
-
+        repositery.save(mapper.map(labDTO , LabEntity.class));
     }
 
     @Override
