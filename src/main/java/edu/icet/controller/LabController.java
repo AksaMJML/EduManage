@@ -28,4 +28,10 @@ public class LabController {
     public void deleteLab(@PathVariable Integer id){
         service.deleteLab(id);
     }
+
+    @GetMapping("/search-by-id/{id}")
+    public LabDTO searchById(@PathVariable Integer id) {
+        return service.searchById(id);
+    }
+
 }

@@ -37,7 +37,9 @@ public class LabServiceImpl implements LabService {
 
     @Override
     public LabDTO searchById(Integer id) {
-        return null;
+        LabEntity labEntity = repositery.findById(id).get();
+        LabDTO labDTO = mapper.map(labEntity, LabDTO.class);
+        return labDTO;
     }
 
     @Override
