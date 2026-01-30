@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import javax.print.DocFlavor;
 import java.util.List;
 @RequiredArgsConstructor
 @Service
@@ -27,7 +28,7 @@ public class LabAssistantServiceImpl implements LabAssistantService {
 
     @Override
     public void deleteLabAssistant(Integer id) {
-
+        repositery.deleteById(id);
     }
 
     @Override

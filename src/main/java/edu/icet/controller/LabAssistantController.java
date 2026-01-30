@@ -4,10 +4,7 @@ import edu.icet.model.dto.LabAssistantDTO;
 import edu.icet.service.LabAssistantService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/lab-assistants")
@@ -18,12 +15,16 @@ public class LabAssistantController {
     final LabAssistantService service;
 
     @PostMapping("/add")
-    public void addLabAssistant(LabAssistantDTO labAssistantDTO) {
+    public void addLabAssistant(@RequestBody LabAssistantDTO labAssistantDTO) {
         service.addLabAssistant(labAssistantDTO);
     }
 
     @PutMapping("/update")
-    public void updateLabAssistant(LabAssistantDTO labAssistantDTO) {
+    public void updateLabAssistant(@RequestBody LabAssistantDTO labAssistantDTO) {
         service.updateLabAssistant(labAssistantDTO);
+    }
+    @DeleteMapping("/delete-by-id/{id}")
+    public void deleteLabAssistant(@PathVariable Integer id) {
+        service.deleteLabAssistant(id);
     }
 }
